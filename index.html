@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Recommender</title>
+    <style>
+        /* Background Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6D5BBA, #8D58BF, #D76D77, #FFAF7B);
+            background-size: 300% 300%;
+            animation: gradientBG 8s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Background Animation */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism Container */
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Heading Styling */
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Label Styling */
+        label {
+            font-weight: bold;
+            text-align: left;
+            display: block;
+        }
+
+        /* Input Field Styling */
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            transform: scale(1.05);
+        }
+
+        /* Button Styling */
+        button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: #ff4500;
+            transform: scale(1.1);
+            box-shadow: 0px 4px 10px rgba(255, 102, 0, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🎯 Get Your Personalized Recommendations</h2>
+        <form action="/recommend" method="post">
+            <label for="user_id">User ID:</label>
+            <input type="number" id="user_id" name="user_id" required>
+
+            <label for="item_id">Item ID:</label>
+            <input type="number" id="item_id" name="item_id" required>
+
+            <label for="hour">Hour:</label>
+            <input type="number" id="hour" name="hour" required>
+
+            <label for="day">Day:</label>
+            <input type="number" id="day" name="day" required>
+
+            <label for="month">Month:</label>
+            <input type="number" id="month" name="month" required>
+
+            <label for="user_interaction_count">User Interaction Count:</label>
+            <input type="number" id="user_interaction_count" name="user_interaction_count" required>
+
+            <label for="item_popularity">Item Popularity:</label>
+            <input type="number" id="item_popularity" name="item_popularity" required>
+
+            <button type="submit">🚀 Get Recommendations</button>
+        </form>
+    </div>
+</body>
+</html>
